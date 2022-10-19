@@ -1,0 +1,48 @@
+<h2>This is a Employee Detail Page</h2>
+
+<br><br>
+{{today|date:'shortTime'}}
+<br><br>
+<div>
+Employee Father Name : <input type="text" > <br><br>
+Employee Mother Name : <input type="text" ><br><br>
+Employee Emergency Contact : <input type="text" ><br><br>
+Employee PF ACCOUNT Num : <input type="text" ><br><br>
+Employee Account Num : <input type="text" ><br><br>
+Employee PAN Num : <input type="text" ><br><br>
+
+<input type="button" value="get Users From Server" (click)="displayusers($event)">
+
+
+
+</div>
+
+<div class="card my-5">
+<div class="card-body">
+    <table class="table table-bordered table-striped table-hover">
+        <!-- <table border="1"> -->
+        <thead class="thead-dark">
+            <!-- <thead> -->
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>UserName</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Website</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.phone}}</td>
+            <td>{{user.website}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+

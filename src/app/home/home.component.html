@@ -1,0 +1,72 @@
+<h2>This is my home page</h2>
+
+<br><br>
+{{todayDate|date:'shortTime'}}
+
+<br><br>
+<div *ngIf="checkstatus">
+FirstName : <input type="text" id="firstname" value="{{name}}">
+secondname :<input type="text" id="secondname"> 
+
+txtboxNgMod:<input type="text" id="thirdname" [(ngModel)]="surname">
+
+Submit:<input type="button" value="firstNonRepeatedCharacter"  (click)="firstNonRepeatedCharacter($event)"> <br>
+
+</div><br>
+
+<p *ngFor="let mobile of mobiles">{{mobile}}</p>
+
+<h3>List of Laptops Available:</h3>
+
+<select (change)="changeddata($event)">
+    <option *ngFor="let laptopname of laptops">{{laptopname}}</option>
+</select> 
+
+<br><br>
+
+{{data | uppercase}} <br><br>
+
+{{data | lowercase}}  <br><br>
+
+{{todayDate }} <br><br>
+{{todayDate | date:'d/M/y'}} <br><br>
+{{todayDate | date:'shortTime'}}<br><br>
+
+
+BankBalance : {{bankBalance | currency : 'USD'}}<br><br>
+
+BankBalance : {{bankBalance | currency : 'INR'}}<br><br>
+
+BankBalance : {{bankBalance | currency : 'EUR'}}<br><br>
+
+Utilization :{{performance  | percent }}<br><br>
+
+
+
+<span *ngIf="checkstatus;else condition1"> Condition is true</span> 
+<ng-template #condition1>Condition is false</ng-template>
+
+<br/>
+
+<form #userlogin ="ngForm" (ngSubmit)="onsubmit(userlogin.value)">
+    <input type="text" name="email" placeholder="email_id" ngModel>
+    <br/>
+    <input type="password" name="password" placeholder="password" ngModel>
+    <br />
+    <input type="submit" value="Submit">
+</form>
+
+
+
+<br>
+<br>
+<form appForm [formGroup]="form" (ngSubmit)="submit()">
+    <input formControlName="first" id="first" />
+    <br/>
+    <input formControlName="last" id="last" />
+    <br/>
+    <button>submit</button>
+</form>
+    
+
+

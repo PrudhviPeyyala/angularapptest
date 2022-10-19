@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.css';
+.selector {
+    /* background-image: url("C:/Users/prudh/Downloads/tree_image.webp"); */
+    background-color: linen;
+}
